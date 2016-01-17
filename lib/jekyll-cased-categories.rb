@@ -17,6 +17,7 @@ module Jekyll
         i_month:     date.strftime("%-m"),
         categories:  (data['categories'] || []).map { |c| c.to_s.downcase }.uniq.join('/'),
         cased_categories:  (data['categories'] || []).map { |c| c.to_s }.uniq.join('/'),
+        label:       data['label'].to_s || Utils.slugify(basename_without_ext),
         short_month: date.strftime("%b"),
         short_year:  date.strftime("%y"),
         y_day:       date.strftime("%j"),
