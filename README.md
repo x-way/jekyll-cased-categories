@@ -1,7 +1,7 @@
 # jekyll-cased-categories
 ![](https://img.shields.io/gem/dt/jekyll-cased-categories.svg) ![](https://img.shields.io/gem/v/jekyll-cased-categories.svg)
 
-A plugin to keep categories case-sensitive in Jekyll 3.0 and above. Ruby gems [homepage](https://rubygems.org/gems/jekyll-cased-categories).
+A plugin to keep categories case-sensitive in Jekyll 3.1 and above. Ruby gems [homepage](https://rubygems.org/gems/jekyll-cased-categories).
 
 ## Installation
 

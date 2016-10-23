@@ -1,27 +1,17 @@
 module Jekyll
-  class Document
-    def url_placeholders
-      {
-        collection:  collection.label,
-        path:        cleaned_relative_path,
-        output_ext:  output_ext,
-        name:        Utils.slugify(basename_without_ext),
-        title:       Utils.slugify(data['slug']) || Utils.slugify(basename_without_ext),
-        year:        date.strftime("%Y"),
-        month:       date.strftime("%m"),
-        day:         date.strftime("%d"),
-        hour:        date.strftime("%H"),
-        minute:      date.strftime("%M"),
-        second:      date.strftime("%S"),
-        i_day:       date.strftime("%-d"),
-        i_month:     date.strftime("%-m"),
-        categories:  (data['categories'] || []).map { |c| c.to_s.downcase }.uniq.join('/'),
-        cased_categories:  (data['categories'] || []).map { |c| c.to_s }.uniq.join('/'),
-        label:       data['label'].to_s || Utils.slugify(basename_without_ext),
-        short_month: date.strftime("%b"),
-        short_year:  date.strftime("%y"),
-        y_day:       date.strftime("%j"),
-      }
+  module Drops
+    class UrlDrop
+      def cased_categories
+        cased_category_set = Set.new
+        Array(@obj.data['categories']).each do |category|
+          cased_category_set << category.to_s
+        end
+        cased_category_set.to_a.join('/')
+      end
+
+      def label
+        @obj.data['label'].to_s || Utils.slugify(@obj.basename_without_ext)
+      end
     end
   end
 end
