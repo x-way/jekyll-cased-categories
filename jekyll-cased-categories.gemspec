@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.authors     = ['x-way']
   spec.email       = 'x-way@waterwave.ch'
   spec.homepage    = 'https://github.com/x-way/jekyll-cased-categories'
-  spec.license     = 'GPL'
+  spec.license     = 'GPL-2.0'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
