@@ -1,0 +1,20 @@
+name: CI
+
+on: [ pull_request, push ]
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        ruby: [ '2.4','2.6','2.6','2.7' ]
+    name: Ruby ${{ matrix.ruby }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: hello world
+        run: echo hello ruby $rubyversion world
+        env:
+          rubyversion: ${{ matrix.ruby }}
