@@ -14,7 +14,9 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
-      - name: hello world
-        run: echo hello ruby $rubyversion world
+      - name: Rubocop
+        uses: andrewmcodes/rubocop-linter-action@v3.0.0.rc2
         env:
-          rubyversion: ${{ matrix.ruby }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build Gem
+        run: gem build *.gemspec
