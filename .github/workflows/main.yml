@@ -14,5 +14,11 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+      - name: Install latest bundler
+        run: gem install bundler
+      - name: Install rubocop
+        run: bundle install
+      - name: Rubocop
+        run: rubocop
       - name: Build Gem
         run: gem build *.gemspec
