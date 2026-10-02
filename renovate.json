@@ -1,6 +1,7 @@
 {
   "extends": [
     "config:base",
+    "group:allNonMajor",
     ":disableDependencyDashboard"
   ],
   "assignees": [
@@ -28,7 +29,8 @@
       ],
       "schedule": [
         "before 5am on the first day of the month"
-      ]
+      ],
+      "groupName": "github actions"
     }
   ]
 }
