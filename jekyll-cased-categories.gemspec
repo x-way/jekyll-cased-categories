@@ -22,9 +22,9 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.5"
 
   spec.add_development_dependency "bundler", ">= 2.2.10"
-  spec.add_development_dependency "jekyll", [">= 3.1", "< 4.0"]
+  spec.add_development_dependency "jekyll", [">= 3.1", "< 4.4.2"]
   spec.add_development_dependency "rake", ">= 12.3.3"
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 1.18.0"
-  spec.add_development_dependency "rubocop-jekyll", "~> 0.12.0"
+  spec.add_development_dependency "rubocop", "~> 1.92.0"
+  spec.add_development_dependency "rubocop-jekyll", "~> 0.14.0"
 end
